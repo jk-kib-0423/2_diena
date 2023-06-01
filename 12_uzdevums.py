@@ -1,16 +1,19 @@
-def minesana(skaitlis):
-    min = 1
-    max = 100
-    minejums = (min + max) // 2
+import random
 
-    while minejums != skaitlis:
-        print("Dators min:", minejums)
+min = 1
+max = 20
+skaitlis = random.randint(min, max)
+meginajumi = 0
 
-        if minejums < skaitlis:
-            min = minejums + 1
-        else:
-            max = minejums - 1
+print(f"Dators mēģinās uzminēt skaitli intervālā no {min} līdz {max}.")
 
-        minejums = (min + max) // 2
-
-    print("Dators uzminēja! Skaitlis ir", minejums)
+while True:
+    minejums = random.randint(min, max)
+    meginajumi += 1
+    
+    print(f"Dators min: {minejums}")
+    
+    if minejums == skaitlis:
+        print("Dators ir uzminējis skaitli!")
+        print(f"Lai uzminētu, tam tas prasīja {meginajumi} mēģinājumus.")
+        break
